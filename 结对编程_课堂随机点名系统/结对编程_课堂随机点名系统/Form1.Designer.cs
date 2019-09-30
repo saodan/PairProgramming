@@ -42,6 +42,7 @@
             this.CallTheRollStop = new System.Windows.Forms.Button();
             this.CallTheRoll = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.Out = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StuAll)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Info;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
+            this.groupBox1.Controls.Add(this.Out);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.CallTheRollStop);
@@ -165,6 +167,17 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // Out
+            // 
+            this.Out.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Out.Location = new System.Drawing.Point(424, 436);
+            this.Out.Name = "Out";
+            this.Out.Size = new System.Drawing.Size(80, 27);
+            this.Out.TabIndex = 9;
+            this.Out.Text = "退出系统";
+            this.Out.UseVisualStyleBackColor = false;
+            this.Out.Click += new System.EventHandler(this.Out_Click);
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -196,6 +209,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Out;
     }
 }
 

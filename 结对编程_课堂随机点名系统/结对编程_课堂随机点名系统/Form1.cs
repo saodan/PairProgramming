@@ -25,20 +25,20 @@ namespace 结对编程_课堂随机点名系统
             try
             {
                 string path1 = @"E:/";
-                filepath = path1 + System.DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString().Replace(":", "-") + "数据输出" + ".xls";
+                filepath = path1 + System.DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString().Replace(":", "-") + "缺课名单" + ".xls";
                 OpenFileDialog op = new OpenFileDialog();
                 op.Filter = "Excel(97-2003)文件|*.xls|所有文件|*.*";
                 op.Title = "打开文件夹";
                 string path = null;
-                op.InitialDirectory = "d:\\";
+                op.InitialDirectory = "d:\\";//最初从D盘开始查找文件，测试文件放置于本文件夹。
                 op.FilterIndex = 1;
-                if (op.ShowDialog() == DialogResult.OK)
+                if (op.ShowDialog() == DialogResult.OK)//判断路径是否正确
                 {
                     path = op.FileName;
                 }
                 string name = GetExcelFile.GetFile(path);//获取Excel文件。
                 string Tsql = "SELECT * FROM [" + name + "]";
-                DataTable table = ExcelToDataTable.Redatatable(path, Tsql).Tables[0];
+                DataTable table = ExcelToDataTable.Redatatable(path, Tsql).Tables[0];//将Excel转换为dataset类型并赋值于table
                 groupBox2.Show();
                 progressBar1.Show();
                 for (int i = 0; i < table.Rows.Count; i++)
@@ -50,11 +50,12 @@ namespace 结对编程_课堂随机点名系统
                 StuAll.DataSource = table;
                 Loading.Hide();
                 label1.Show();
-                stuList = studentList.StudentList(table);
+                stuList = studentList.StudentList(table);//将学生信息存储到字典中。
                 CallTheRoll.Show();
                 CallTheRollStop.Show();
                 groupBox2.Hide();
                 progressBar1.Hide();
+                Out.Show();
             }
             catch (Exception ex)
             {
@@ -70,6 +71,7 @@ namespace 结对编程_课堂随机点名系统
             groupBox2.Hide();
             StuAll.Hide();
             progressBar1.Hide();
+            Out.Hide();
         }
 
         private void timerCallname_(object sender, EventArgs e)
@@ -95,8 +97,14 @@ namespace 结对编程_课堂随机点名系统
             DialogResult re = MessageBox.Show(string.Format("{0}是否缺席。", label1.Text),"提示",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
             {
-                WriteOutStu.Class1.Write(filepath, label1.Text.ToString());
+                WriteOutStu.Class1.Write(filepath, label1.Text.ToString());//将缺课学生导出为Excel文件
             }
+        }
+
+        private void Out_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(string.Format("缺课名单已导出至{0}", filepath));
+            Application.Exit();
         }
     }
 }
