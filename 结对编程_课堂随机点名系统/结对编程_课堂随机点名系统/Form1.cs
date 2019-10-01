@@ -13,7 +13,7 @@ namespace 结对编程_课堂随机点名系统
 {
     public partial class Student : Form
     {
-        string filepath;
+        public string filepath;
         Dictionary<int, string> stuList = new Dictionary<int, string>();
         public Student()
         {

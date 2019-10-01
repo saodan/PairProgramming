@@ -10,7 +10,7 @@ namespace 结对编程_课堂随机点名系统
 {
     public static class GetExcelFile
     {
-         public static string GetFile(string path)
+        public static string GetFile(string path)
         {
             string name = null;
             if (File.Exists(path))

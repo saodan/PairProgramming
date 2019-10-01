@@ -37,12 +37,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Out = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CallTheRollStop = new System.Windows.Forms.Button();
             this.CallTheRoll = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.Out = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StuAll)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,6 +117,17 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // Out
+            // 
+            this.Out.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Out.Location = new System.Drawing.Point(424, 436);
+            this.Out.Name = "Out";
+            this.Out.Size = new System.Drawing.Size(80, 27);
+            this.Out.TabIndex = 9;
+            this.Out.Text = "退出系统";
+            this.Out.UseVisualStyleBackColor = false;
+            this.Out.Click += new System.EventHandler(this.Out_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -166,17 +177,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // Out
-            // 
-            this.Out.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Out.Location = new System.Drawing.Point(424, 436);
-            this.Out.Name = "Out";
-            this.Out.Size = new System.Drawing.Size(80, 27);
-            this.Out.TabIndex = 9;
-            this.Out.Text = "退出系统";
-            this.Out.UseVisualStyleBackColor = false;
-            this.Out.Click += new System.EventHandler(this.Out_Click);
             // 
             // Student
             // 
